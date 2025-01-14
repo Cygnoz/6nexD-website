@@ -17,7 +17,7 @@ function Navbar() {
         </button>
 
         {/* Navigation Links - Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex bg-[#25252533] px-2 rounded-lg items-center gap-8">
           <NavLinks />
         </div>
 
