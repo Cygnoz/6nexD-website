@@ -7,7 +7,7 @@ function VehicleHistory() {
           <div className="relative w-full min-h-screen overflow-hidden bg-gradient-to-t from-gray-900 to-black">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={vehiclebg} alt="particles" className="w-full h-full object-cover rotate-180 opacity-70" />
+        <img src={vehiclebg} alt="particles" loading="lazy" className="w-full h-full object-cover rotate-180 opacity-70" />
       </div>
 
       {/* Overlay for better text contrast */}

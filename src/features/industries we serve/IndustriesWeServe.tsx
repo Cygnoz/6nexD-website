@@ -4,10 +4,10 @@ import IndustryCards from "../../components/IndustryCards"
 function IndustriesWeServe() {
   return (
     <>
-      <div className="relative w-full min-h-screen overflow-hidden bg-gradient-to-t from-gray-900 to-black">
+      <div id="service" className="relative w-full min-h-screen overflow-hidden bg-gradient-to-t from-gray-900 to-black">
         {/* Background Image */}
         <div className="absolute ">
-          <img src={servicesbg} alt="particles" className="w-full h-full object-cover opacity-70" />
+          <img src={servicesbg} loading="lazy" alt="particles" className="w-full h-full object-cover opacity-70" />
         </div>
 
         {/* Overlay for better text contrast */}

@@ -6,7 +6,7 @@ function CommonQueries() {
       <div className="relative  w-full min-h-screen overflow-hidden">
         {/* Background Image */}
         <div className="absolute ">
-          <img src={commonqueriesbg} alt="particles" className="w-full h-full object-cover" />
+          <img src={commonqueriesbg} loading="lazy" alt="particles" className="w-full h-full object-cover" />
         </div>
 
         {/* Main Content */}

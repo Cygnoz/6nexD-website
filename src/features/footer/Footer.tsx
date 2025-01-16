@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <div className="relative w-full min-h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute">
-        <img src={footerbg} alt="particles" className="w-full h-full object-cover" />
+        <img src={footerbg} loading="lazy" alt="particles" className="w-full h-full object-cover" />
       </div>
 
       {/* Main Content */}

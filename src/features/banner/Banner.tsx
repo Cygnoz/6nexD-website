@@ -11,7 +11,7 @@ function Banner() {
 
       {/* Banner Image */}
       <div className="relative">
-        <img src={bannerimg} alt="Banner" className="w-full h-auto" loading="lazy" />
+        <img src={bannerimg} alt="Banner" className="w-full h-auto" loading="eager" />
 
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
