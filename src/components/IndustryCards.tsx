@@ -135,7 +135,7 @@ export default function IndustryCards() {
               : `${industries.length * cardHeight + extraSpacing - 40}px`, // Adjust button position for stacked view
           }}
         >
-          <ArrowDown className={`w-6 h-6 text-black transition-transform ${!isCollapsed ? 'rotate-180' : ''}`} />
+          <ArrowDown className={`w-6 h-6  text-black transition-transform ${!isCollapsed ? 'rotate-180' : ''}`} />
         </button>
       </div>
     </div>
