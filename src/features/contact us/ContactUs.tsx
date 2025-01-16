@@ -1,9 +1,9 @@
-import particles from "../../assets/images/particles.png"
+import contactus from "../../assets/images/contactus.png"
 
 const ContactUs = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-t from-gray-900 to-black">
-      <img src={particles} alt="particles" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-t">
+      <img src={contactus} alt="particles" className="absolute inset-0 w-full h-full object-cover " />
 
       <div className="relative z-10 w-full h-full">
         <div className="container mx-auto h-full">

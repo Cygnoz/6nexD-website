@@ -1,20 +1,41 @@
 import React from 'react';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
-import sixnexdlogo from '../../assets/images/SIX.png';
+import sixnexdvideo from '../../assets/video/footervideo.mp4';
+import footerbg from '../../assets/images/footerbg.png';
+import nexd from '../../assets/images/NEXD.png';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-gray-400 py-12 px-6">
+
+    <div className="relative w-full min-h-screen overflow-hidden ">
+    {/* Background Image */}
+    <div className="absolute ">
+      <img src={footerbg} alt="particles" className="w-full h-full object-cover " />
+    </div>
+
+    {/* Overlay for better text contrast */}
+    {/* <div className="absolute inset-0 bg-black/60"></div> */}
+
+    {/* Main Content */}
+    <div className="relative z-10 flex flex-col items-center text-white py-16">
+
+    <footer className="bg-black text-gray-400 py-12 shadow-lg shadow-[#6B6B6B17] rounded-lg px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Logo Section */}
-          <div className="md:col-span-4">
-            <img
-              src={sixnexdlogo}
-              className="mb-4 w-48"
-            />
-            <p className="text-sm mt-8">© Copyright 2024 6nexd™ Inc. All rights reserved.</p>
-          </div>
+          <div className="md:col-span-4 flex flex-col items-center">
+  <video
+    src={sixnexdvideo}
+    className="mb-4 w-48"
+    muted
+    loop
+    autoPlay
+    playsInline
+  />
+  <img src={nexd} className="w-18 h-8 mb-2" alt="" />
+  <p className="text-sm mt-2 text-center">© Copyright 2024 6nexd™ Inc. All rights reserved.</p>
+</div>
+
 
           {/* About Section */}
           <div className="md:col-span-3">
@@ -78,6 +99,11 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
+      </div>
+      </div>
+
+
+
   );
 };
 
