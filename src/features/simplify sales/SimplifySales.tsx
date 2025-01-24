@@ -24,7 +24,7 @@ function SimplifySales() {
 
         {/* description */}
         <div className="relative max-w-5xl w-full mx-auto mt-8 px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#A5A5A5] text-xl leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#A5A5A5] text-xl ">
             <p>
             The 6nexd POS system simplifies transaction management, tailored specifically for car service businesses. With fast processing, real-time inventory syncing, and accurate invoicing, it ensures every sale is efficient and integrated across your operations.
             </p>

@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <div className="flex justify-center w-full mt-2">
-      <nav className="flex flex-wrap items-center justify-between rounded-lg px-6 py-4 bg-[#202020CC] bg-opacity-80 w-full max-w-6xl">
+      <nav className="flex flex-wrap items-center justify-between rounded-lg px-4 py-1  bg-[#202020CC] bg-opacity-80 w-full max-w-7xl">
         {/* Logo */}
         <button className="flex items-center">
           <img src={sixnexdlogo} alt="6Nexd Logo" className="h-8" />
@@ -23,7 +23,7 @@ function Navbar() {
 
         {/* Sign Up Button */}
         <button className="hidden md:block px-2 py-2">
-          <p className="bg-gradient-to-r from-blue-600 via-green-500 font-sans to-indigo-400 bg-clip-text text-transparent">
+          <p className=" text-3xl bg-custom-gradient font-sans  bg-clip-text text-transparent">
             Sign Up
           </p>
         </button>
@@ -61,7 +61,7 @@ function Navbar() {
         >
           <NavLinks mobile />
           <button className="w-full text-left px-2 py-2 mt-4">
-            <p className="bg-gradient-to-r from-blue-600 via-green-500 font-sans to-indigo-400 bg-clip-text text-transparent">
+            <p className="bg-gradient-to-r from-blue-600 via-green-500 text-3xl font-sans to-indigo-400 bg-clip-text text-transparent">
               Sign Up
             </p>
           </button>

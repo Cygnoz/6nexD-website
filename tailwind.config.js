@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+        backgroundImage: {
+            'custom-gradient':
+              'linear-gradient(94.08deg, #06DAAE 1.48%, #009EFF 40.68%, #1E90FF 50%, #FF8C00 98.52%)',
+          },
       fontFamily: {
         sans: ['"Neue Haas Grotesk Display Pro"', 'sans-serif'], // Add your custom font
       },

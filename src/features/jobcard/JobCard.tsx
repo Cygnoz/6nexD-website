@@ -38,7 +38,7 @@ export default function JobCard({}: Props) {
             ></div>
 
             {/* Cards Grid */}
-            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-24 p-6">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-16 p-12">
               {/* First Card */}
               <img src={jobcard1} loading="lazy" alt="card1" />
 
