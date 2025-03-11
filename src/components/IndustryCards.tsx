@@ -73,71 +73,72 @@ export default function IndustryCards() {
   const extraSpacing = 80; // Extra space to ensure button visibility
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-sans font-bold mb-4">Industries We Serve</h2>
-        <p className="text-xl text-gray-200 font-sans max-w-3xl mx-auto">
-          6nexd meets the needs of industries requiring efficient billing, inventory management, and service tracking. Here's how 6nexd transforms operations across sectors:
-        </p>
-      </div>
-
-      <div
-        className="relative transition-all"
+    <div className="max-w-4xl mx-auto p-4 md:p-6">
+    <div className="text-center mb-8 md:mb-12">
+      <h2 className="text-3xl md:text-4xl font-sans font-bold mb-4">Industries We Serve</h2>
+      <p className="text-base md:text-xl text-gray-200 font-sans max-w-3xl mx-auto">
+        6nexd meets the needs of industries requiring efficient billing, inventory management, and service tracking. Here's how 6nexd transforms operations across sectors:
+      </p>
+    </div>
+  
+    <div
+      className="relative transition-all"
+      style={{
+        height: isCollapsed
+          ? `${industries.length * collapsedHeight + extraSpacing}px`
+          : `${industries.length * cardHeight + extraSpacing}px`,
+      }}
+    >
+      <AnimatePresence>
+        {industries.map((industry, index) => (
+          <motion.div
+            key={industry.id}
+            initial={false}
+            animate={{
+              y: isCollapsed ? index * collapsedHeight : index * cardHeight,
+              zIndex: industries.length - index,
+              opacity: 1,
+              scale: isCollapsed && index !== 0 ? 0.95 : 1,
+            }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeInOut',
+            }}
+            className={`absolute w-full ${industry.bgColor} rounded-xl p-4 md:p-6 shadow-lg`}
+          >
+            <div className={`flex flex-col md:flex-row items-start gap-4 ${industry.textColor}`}>
+              <img
+                loading='lazy'
+                src={industry.icon as string}
+                alt=""
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full"
+              />
+              <div className="flex-1">
+                <h3 className="text-xl md:text-2xl font-bold mb-2">{industry.title} :</h3>
+                <p className="text-sm md:text-lg">{industry.description}</p>
+              </div>
+            </div>
+            <div className="absolute bottom-4 left-3 text-5xl md:text-6xl font-bold opacity-20">
+              {industry.number}
+            </div>
+          </motion.div>
+        ))}
+      </AnimatePresence>
+  
+      {/* Toggle Button */}
+      <button
+        onClick={() => setIsCollapsed(!isCollapsed)}
+        className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded-full p-3 md:p-4 shadow-lg hover:bg-gray-100 transition-all mt-20 md:mt-10"
         style={{
-          height: isCollapsed
-            ? `${industries.length * collapsedHeight + extraSpacing}px`
-            : `${industries.length * cardHeight + extraSpacing}px`,
+          top: isCollapsed
+            ? `${industries.length * collapsedHeight + extraSpacing - 20}px`
+            : `${industries.length * cardHeight + extraSpacing - 40}px`,
         }}
       >
-        <AnimatePresence>
-          {industries.map((industry, index) => (
-            <motion.div
-              key={industry.id}
-              initial={false}
-              animate={{
-                y: isCollapsed ? index * collapsedHeight : index * cardHeight,
-                zIndex: industries.length - index,
-                opacity: 1, // Keep all cards visible
-                scale: isCollapsed && index !== 0 ? 0.95 : 1, // Slightly smaller for collapsed cards
-              }}
-              transition={{
-                duration: 0.5,
-                ease: 'easeInOut',
-              }}
-              className={`absolute w-full ${industry.bgColor} rounded-xl p-6 shadow-lg`}
-            >
-              <div className={`flex items-start gap-4 ${industry.textColor}`}>
-                <img
-                  loading='lazy'
-                  src={industry.icon as string} // Ensure the icon resolves to a string
-                  alt=""
-                  className="w-12 h-12 rounded-full"
-                />
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">{industry.title} :</h3>
-                  <p className="text-lg">{industry.description}</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-6 text-6xl font-bold opacity-20">
-                {industry.number}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-
-        {/* Toggle Button */}
-        <button
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 shadow-lg hover:bg-gray-100 transition-all"
-          style={{
-            top: isCollapsed
-              ? `${industries.length * collapsedHeight + extraSpacing - 20}px`
-              : `${industries.length * cardHeight + extraSpacing - 40}px`, // Adjust button position for stacked view
-          }}
-        >
-          <ArrowDown className={`w-6 h-6  text-black transition-transform ${!isCollapsed ? 'rotate-180' : ''}`} />
-        </button>
-      </div>
+        <ArrowDown className={`w-5 h-5  md:w-6 md:h-6  text-black transition-transform ${!isCollapsed ? 'rotate-180' : ''}`} />
+      </button>
     </div>
+  </div>
+  
   );
 }

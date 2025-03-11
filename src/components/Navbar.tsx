@@ -1,16 +1,34 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import sixnexdlogo from "../assets/images/6nexD.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null); // Ref for the drawer
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  // Close drawer when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (drawerRef.current && !drawerRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false); // Close drawer if clicked outside
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className="flex justify-center w-full mt-2">
-      <nav className="flex flex-wrap items-center justify-between rounded-lg px-4 py-1  bg-[#202020CC] bg-opacity-80 w-full max-w-7xl">
+      <nav className="flex flex-wrap items-center justify-between rounded-lg px-4 py-1 bg-[#202020CC] bg-opacity-80 w-full max-w-7xl">
         {/* Logo */}
         <button className="flex items-center">
           <img src={sixnexdlogo} alt="6Nexd Logo" className="h-8" />
@@ -23,7 +41,7 @@ function Navbar() {
 
         {/* Sign Up Button */}
         <button className="hidden md:block px-2 py-2">
-          <p className=" text-3xl bg-custom-gradient font-sans  bg-clip-text text-transparent">
+          <p className="text-3xl bg-custom-gradient font-sans bg-clip-text text-transparent">
             Sign Up
           </p>
         </button>
@@ -53,17 +71,29 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Right to Left Drawer */}
+        {isMenuOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-60 z-40"></div> // Background Blur
+        )}
+
         <div
-          className={`md:hidden w-full mt-4 transition-all duration-300 ease-in-out ${
-            isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          } overflow-hidden`}
+          ref={drawerRef}
+          className={`fixed top-0 right-0 w-2/3 h-full bg-[#10101085] p-6 transition-transform duration-700 ease-in-out transform z-50
+          ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
         >
           <NavLinks mobile />
           <button className="w-full text-left px-2 py-2 mt-4">
             <p className="bg-gradient-to-r from-blue-600 via-green-500 text-3xl font-sans to-indigo-400 bg-clip-text text-transparent">
               Sign Up
             </p>
+          </button>
+
+          {/* Close Button */}
+          <button
+            onClick={toggleMenu}
+            className="absolute top-4 right-4 text-white text-2xl"
+          >
+            ✖
           </button>
         </div>
       </nav>

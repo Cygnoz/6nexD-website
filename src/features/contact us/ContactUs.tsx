@@ -24,35 +24,65 @@ const ContactUs = () => {
             </div>
 
             {/* Right Section */}
-            <div className="w-full md:w-1/2 max-w-md ">
-              <div className="bg-[#1A1A1A] backdrop-blur-sm p-6 rounded-lg">
-                <form className="space-y-4">
-                  <h2 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-clip-text font-sans font-bold text-transparent">6NEXD</h2>
-                  <p className="text-[#393838]">Book a demo to see how 6NEXD can streamline your operations and boost efficiency.</p>
+            <div className="w-full md:w-1/2 max-w-sm mx-auto px-4 sm:px-6 md:px-0 mb-16">
+  <div className="bg-[#1A1A1A] backdrop-blur-sm p-4 sm:p-6 rounded-lg shadow-md">
+    <form className="space-y-1 ">
+      <h2 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-clip-text font-sans font-bold text-transparent text-2xl sm:text-3xl">
+        6NEXD
+      </h2>
 
-                  {/* <!-- Name Input --> */}
-                  <label className="block text-sm text-gray-400">Name</label>
-                  <input type="text" id="name"  className="w-full bg-transparent border-b mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D] " />
+      <p className="text-[#BBBBBB] text-sm sm:text-base">
+        Book a demo to see how 6NEXD can streamline your operations and boost efficiency.
+      </p>
 
-                  {/* <!-- Contact Number Input --> */}
-                  <label className="block text-sm text-gray-400">Contact Number</label>
-                  <input type="tel" id="contact"  className="w-full bg-transparent border-b mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D] " />
+      {/* Name Input */}
+      <label className="block text-sm text-gray-400">Name</label>
+      <input
+        type="text"
+        id="name"
+        className="w-full bg-transparent border-b mt-3 sm:mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D]"
+      />
 
-                  {/* <!-- Business Info Input --> */}
-                  <label className="block text-sm text-gray-400">Business Info</label>
-                  <input type="text" id="businessInfo"  className="w-full bg-transparent border-b mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D] placeholder-[#A1A1A1]" />
+      {/* Contact Number Input */}
+      <label className="block text-sm text-gray-400">Contact Number</label>
+      <input
+        type="tel"
+        id="contact"
+        className="w-full bg-transparent border-b mt-3 sm:mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D]"
+      />
 
-                  
-                  <textarea id="message" placeholder="Your message here" rows={4} className="w-full bg-transparent border-b mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D] placeholder-[#A1A1A1]"></textarea>
+      {/* Business Info Input */}
+      <label className="block text-sm text-gray-400">Business Info</label>
+      <input
+        type="text"
+        id="businessInfo"
+        className="w-full bg-transparent border-b mt-3 sm:mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D] placeholder-[#A1A1A1]"
+      />
 
-                  <button type="submit" className="w-full bg-white text-[#2D2D2D] font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition-colors">
-                    Reserve a Demo
-                  </button>
+      {/* Message Input */}
+      <textarea
+        id="message"
+        placeholder="Your message here"
+        rows={4}
+        className="w-full bg-transparent border-b mt-3 sm:mt-5 text-white focus:outline-none focus:ring-0 border-[#2D2D2D] placeholder-[#A1A1A1]"
+      ></textarea>
 
-                  <p className="text-xs text-gray-400 text-center mt-4">By clicking Submit, you agree to our Terms of Service and that you have read our Privacy Policy.</p>
-                </form>
-              </div>
-            </div>
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="w-full bg-white text-[#2D2D2D] font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition-colors"
+      >
+        Reserve a Demo
+      </button>
+
+      <p className="text-xs text-gray-400 text-center mt-4">
+        By clicking Submit, you agree to our Terms of Service and that you have read our Privacy Policy.
+      </p>
+    </form>
+  </div>
+</div>
+
+
           </div>
         </div>
       </div>

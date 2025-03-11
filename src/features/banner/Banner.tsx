@@ -18,7 +18,7 @@ function Banner() {
       </div>
 
       {/* Banner Content */}
-      <div className="absolute top-1/2 left-4 md:top-2/3 md:left-16 transform -translate-y-1/2 text-left text-white z-20 pt-16 md:pt-0">
+      <div className="absolute top-1/2 left-4 md:top-2/3 md:left-16 transform -translate-y-1/2 text-left text-white z-10 pt-16 md:pt-0">
         <h1 className="text-xl font-medium sm:text-3xl md:text-5xl lg:text-6xl font-sans  leading-tight">
           Unify Every Aspect of Your <br className="hidden sm:block" /> Operations for Maximum{" "}
           <span className="bg-gradient-to-r from-blue-600 via-green-500 font-sans to-indigo-400 bg-clip-text text-transparent">
