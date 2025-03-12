@@ -31,13 +31,16 @@ const Footer: React.FC = () => {
                   loop
                   autoPlay
                   playsInline
+                  preload="auto"  // Ensures faster loading (similar to eager)
                 />
                 <img
                   src={nexd}
                   className="w-14 md:w-16 h-6 md:h-10"
                   alt="6NEXD Logo"
+                  loading="lazy"  // Loads the image only when needed
                 />
               </div>
+
 
               {/* About Section */}
               <div>
